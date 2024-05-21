@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Монетка</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://kartinki.pics/uploads/posts/2021-07/1626712802_31-kartinkin-com-p-zadnii-fon-dlya-tvicha-krasivo-31.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.33) scale(0.67);
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            filter: brightness(1);
+        }
+        .overlay:hover {
+            transform: translate(-50%, -50%) scale(0.33) scale(0.67) translateY(2px);
+            filter: brightness(0.8);
+        }
+        #progressBarContainer {
+            position: absolute;
+            top: calc(50% + 150px); /* поднял на 150px ниже */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px; /* ширина шкалы */
+            height: 30px; /* высота шкалы */
+            background: rgba(255, 255, 255, 0.1); /* прозрачный фон */
+            border-radius: 15px; /* радиус скругления */
+            overflow: hidden; /* скрытие части прогресса */
+        }
+        #progressBar {
+            height: 100%;
+            background: linear-gradient(to right, #8A2BE2, #FF00FF); /* фиолетовый градиент */
+            width: 0; /* начальная ширина прогресса */
+            border-radius: 15px; /* радиус скругления */
+            transition: width 0.2s ease; /* плавное изменение ширины */
+        }
+    </style>
+</head>
+<body>
+    <img src="C:\Users\aontb\Desktop\Сайт\pixel-stlye-cartoon-front-view-cryptocurrency-matic-polygon-purple-coin_477250-316-removebg-preview (1)-Photoroom.png-Photoroom.png" alt="Фото" class="overlay" onclick="countClicks()">
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+
+    <script>
+        var clickCount = 0;
+        var maxClicks = 100; // максимальное количество кликов
+
+        function countClicks() {
+            if (clickCount < maxClicks) {
+                clickCount++;
+                document.getElementById("progressBar").style.width = (clickCount / maxClicks) * 100 + "%"; // изменение ширины прогресса
+            }
+        }
+    </script>
+</body>
+</html>
