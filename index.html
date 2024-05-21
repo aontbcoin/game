@@ -28,40 +28,50 @@
             transform: translate(-50%, -50%) scale(0.33) scale(0.67) translateY(2px);
             filter: brightness(0.8);
         }
+        .overlay:active {
+            transform: translate(-50%, -50%) scale(0.33) scale(0.67) translateY(2px) rotate(5deg); /* добавлен поворот */
+            filter: brightness(0.8);
+        }
         #progressBarContainer {
             position: absolute;
-            top: calc(50% + 150px); /* поднял на 150px ниже */
+            top: calc(50% + 150px);
             left: 50%;
             transform: translateX(-50%);
-            width: 200px; /* ширина шкалы */
-            height: 30px; /* высота шкалы */
-            background: rgba(255, 255, 255, 0.1); /* прозрачный фон */
-            border-radius: 15px; /* радиус скругления */
-            overflow: hidden; /* скрытие части прогресса */
+            width: 200px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
         }
         #progressBar {
             height: 100%;
-            background: linear-gradient(to right, #8A2BE2, #FF00FF); /* фиолетовый градиент */
-            width: 0; /* начальная ширина прогресса */
-            border-radius: 15px; /* радиус скругления */
-            transition: width 0.2s ease; /* плавное изменение ширины */
+            background: linear-gradient(to right, #8A2BE2, #FF00FF);
+            width: 0;
+            border-radius: 15px;
+            transition: width 0.2s ease;
+        }
+        .overlay img {
+            width: 512px; /* увеличение ширины в 4 раза от текущего значения */
+            height: 512px; /* увеличение высоты в 4 раза от текущего значения */
         }
     </style>
 </head>
 <body>
-    <img src="C:\Users\aontb\Desktop\Сайт\pixel-stlye-cartoon-front-view-cryptocurrency-matic-polygon-purple-coin_477250-316-removebg-preview (1)-Photoroom.png-Photoroom.png" alt="Фото" class="overlay" onclick="countClicks()">
+    <div class="overlay" onclick="countClicks()">
+        <img src="https://cdn-icons-png.flaticon.com/128/8193/8193834.png" alt="Фото">
+    </div>
     <div id="progressBarContainer">
         <div id="progressBar"></div>
     </div>
 
     <script>
         var clickCount = 0;
-        var maxClicks = 100; // максимальное количество кликов
+        var maxClicks = 100;
 
         function countClicks() {
             if (clickCount < maxClicks) {
                 clickCount++;
-                document.getElementById("progressBar").style.width = (clickCount / maxClicks) * 100 + "%"; // изменение ширины прогресса
+                document.getElementById("progressBar").style.width = (clickCount / maxClicks) * 100 + "%";
             }
         }
     </script>
