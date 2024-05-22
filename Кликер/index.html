@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <title>Interactive Coin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="icons">
+        <button class="neon-button" id="menu-button">Menu</button>
+        <button class="neon-button" id="profile-button">Profile</button>
+    </div>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/128/8193/8193834.png" alt="coin" id="coin">
+        <div class="progress-bar">
+            <div class="fill" id="fill"></div>
+        </div>
+        <div id="click-counter">ATBCOIN: 0</div>
+    </div>
+    <div class="drawer" id="menu-drawer">
+        <div class="drawer-content">
+            <div class="upgrade">
+                <h3>Мультиклик</h3>
+                <p>Цена: <span id="multiclick-price">100</span> ATBCOIN</p>
+                <p>Клик +<span id="multiclick-level">1</span></p>
+                <button class="neon-button" id="multiclick-upgrade">Улучшить</button>
+            </div>
+            <div class="upgrade">
+                <h3>Автокликер</h3>
+                <p>Цена: <span id="autoclicker-price">100</span> ATBCOIN</p>
+                <p>Каждых 10 секунд +<span id="autoclicker-level">1</span> ATBCOIN</p>
+                <button class="neon-button" id="autoclicker-upgrade">Улучшить</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer" id="profile-drawer">
+        <div class="drawer-content">
+            <h3>Профиль</h3>
+            <p>Информация о профиле будет здесь</p>
+        </div>
+    </div>
+    <div id="level-up-notification" class="hidden">
+        <h2>Поздравляем, уровень повышен!</h2>
+        <p>Награда: <span id="level-up-reward"></span> ATBCOIN</p>
+        <button class="neon-button" id="level-up-confirm">Готово</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
