@@ -11,13 +11,7 @@ body {
     align-items: center;
     background-image: url('https://kartinki.pics/uploads/posts/2021-07/1626712802_31-kartinkin-com-p-zadnii-fon-dlya-tvicha-krasivo-31.jpg');
     background-size: cover;
-    animation: move-background 25s linear infinite; /* Увеличили продолжительность анимации */
     position: relative;
-}
-
-@keyframes move-background {
-    from { background-position: 0 0; }
-    to { background-position: -10000px 0; }
 }
 
 .icons {
@@ -61,7 +55,6 @@ body {
 
 .container {
     text-align: center;
-    position: relative;
 }
 
 #coin {
@@ -93,71 +86,46 @@ body {
     color: white;
 }
 
-.effect {
-    position: absolute;
-    color: yellow;
+#level-counter {
     font-size: 20px;
-    animation: move-up 1s ease-out forwards;
-    pointer-events: none;
+    color: white;
+    margin-top: 10px;
 }
 
-@keyframes move-up {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-50px); }
+.menu, .profile {
+    position: fixed;
+    bottom: -100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: bottom 0.3s ease-in-out;
+}
+
+.menu .upgrade, .profile .upgrade {
+    border: 2px solid purple;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.menu .upgrade h3, .profile .upgrade h3 {
+    color: purple;
+}
+
+.menu .upgrade p, .profile .upgrade p {
+    color: violet;
+}
+
+.open {
+    bottom: 0;
 }
 
 * {
     outline: none; /* Убирает обводку для всех элементов на странице */
 }
 
-.drawer {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
-    transition: bottom 0.5s ease;
-    overflow-y: auto;
-}
-
-.drawer.open {
-    bottom: 0;
-}
-
-.drawer-content {
-    padding: 20px;
-}
-
-.upgrade {
-    border: 2px solid purple;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-align: center;
-}
-
-.upgrade h3, .upgrade p {
-    color: #EE82EE;
-    text-shadow: 0 0 5px #EE82EE, 0 0 10px #EE82EE, 0 0 15px #EE82EE;
-}
-
-#level-up-notification {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border: 2px solid purple;
-    border-radius: 10px;
-    text-align: center;
-    display: none;
-    color: white;
-    z-index: 1000;
-}
 
 .hidden {
     display: none;
