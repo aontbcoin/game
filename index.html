@@ -16,34 +16,27 @@
         <div class="progress-bar">
             <div class="fill" id="fill"></div>
         </div>
-        <div id="click-counter">ATBCOIN: 0</div>
+        <div id="click-counter">Clicks: 0</div>
+        <div id="level-counter">Level: 1</div>
     </div>
-    <div class="drawer" id="menu-drawer">
-        <div class="drawer-content">
-            <div class="upgrade">
-                <h3>Мультиклик</h3>
-                <p>Цена: <span id="multiclick-price">100</span> ATBCOIN</p>
-                <p>Клик +<span id="multiclick-level">1</span></p>
-                <button class="neon-button" id="multiclick-upgrade">Улучшить</button>
-            </div>
-            <div class="upgrade">
-                <h3>Автокликер</h3>
-                <p>Цена: <span id="autoclicker-price">100</span> ATBCOIN</p>
-                <p>Каждых 10 секунд +<span id="autoclicker-level">1</span> ATBCOIN</p>
-                <button class="neon-button" id="autoclicker-upgrade">Улучшить</button>
-            </div>
+    <div class="menu" id="menu">
+        <div class="upgrade">
+            <h3>Мультиклик</h3>
+            <p>Уровень: <span id="multiclick-level">1</span></p>
+            <p>Цена: <span id="multiclick-price">100</span> монет</p>
+            <p>Описание: Клик +1</p>
+            <button class="neon-button" id="upgrade-multiclick">Улучшить</button>
+        </div>
+        <div class="upgrade">
+            <h3>Автокликер</h3>
+            <p>Уровень: <span id="autoclicker-level">1</span></p>
+            <p>Цена: <span id="autoclicker-price">100</span> монет</p>
+            <p>Описание: Кликает по 1 монете в 5 секунд</p>
+            <button class="neon-button" id="upgrade-autoclicker">Улучшить</button>
         </div>
     </div>
-    <div class="drawer" id="profile-drawer">
-        <div class="drawer-content">
-            <h3>Профиль</h3>
-            <p>Информация о профиле будет здесь</p>
-        </div>
-    </div>
-    <div id="level-up-notification" class="hidden">
-        <h2>Поздравляем, уровень повышен!</h2>
-        <p>Награда: <span id="level-up-reward"></span> ATBCOIN</p>
-        <button class="neon-button" id="level-up-confirm">Готово</button>
+    <div class="profile" id="profile">
+        <!-- Дополнительный контент для профиля -->
     </div>
     <script src="script.js"></script>
 </body>
