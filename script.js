@@ -99,8 +99,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateProgress();
 });
-
-    levelUpConfirm.addEventListener('click', () => {
-        levelUpNotification.classList.add('hidden');
-    });
-});
